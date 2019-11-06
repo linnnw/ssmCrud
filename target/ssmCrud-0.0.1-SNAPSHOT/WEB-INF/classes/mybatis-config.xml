@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <!-- 驼峰命名 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+        <!-- 设置MyBatis的Setting（非必须，不同环境下，可能不需要该设置） -->
+        <setting name="lazyLoadingEnabled" value="false"/>
+
+        <!-- 日志开启 -->
+        <setting name="logImpl" value="LOG4J"/>
+        <!-- 二级缓存开启 -->
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="aggressiveLazyLoading" value="true"/>
+    </settings>
+
+    <!-- 设置别名 -->
+    <typeAliases>
+        <package name="com.Netease.bean"/>
+    </typeAliases>
+
+    <!-- 分页插件 -->
+    <plugins>
+        <!-- pagehelper配置 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 设置页数超过最大页数取最大页数 -->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
